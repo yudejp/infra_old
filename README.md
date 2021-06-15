@@ -1,5 +1,5 @@
-# connections
-📎 How our servers connected (for memo purpose)
+# config
+📎 Server's configurations
 
 ## License
 This repository is provided under the MIT License.
