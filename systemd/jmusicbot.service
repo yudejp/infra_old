@@ -1,0 +1,16 @@
+[Unit]
+Description=JMusicBot
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/screen -Dm -S warota /usr/bin/java -Dnogui=true -Xms256M -Xmx512M -jar JMusicBot-0.5.5.jar
+RuntimeMaxSec=86400
+TimeoutStopSec=120
+WorkingDirectory=/home/yude/bot
+Restart=always
+User=yude
+Group=yude
+Environment="DISCORD_TOKEN="
+
+[Install]
+WantedBy=multi-user.target
