@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  server:
+    image: devalx/docker-teamspeak3:latest
+    environment:
+      - TS3SERVER_LICENSE=accept
+    ports:      
+      - 9987:9987/udp      
+      - 10011:10011
+      - 30033:30033
+    volumes:
+      - ./data:/home/ts3/data

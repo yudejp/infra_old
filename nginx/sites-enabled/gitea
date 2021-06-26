@@ -1,0 +1,8 @@
+server {
+    listen [::]:80;
+    server_name git.yude.jp;
+
+    location / {
+        proxy_pass http://cherry:3050;
+    }
+}

@@ -1,0 +1,11 @@
+listen minecraft
+        bind :25565
+        mode tcp
+        balance leastconn
+        option log-health-checks
+        option srvtcpka
+        default-server inter 10s fall 1 rise 10
+        option tcp-check
+        server minecraft1 100.117.175.86:25565 check-send-proxy send-proxy-v2
+        acl too_fast fe_sess_rate gt 10
+        tcp-request content reject if too_fast

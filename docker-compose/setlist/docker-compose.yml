@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  setlist:
+    container_name: setlist
+    image: slashnephy/setlist:latest
+    restart: always
+    environment:
+      # Twitter の資格情報 (必須)
+      TWITTER_CK: 
+      TWITTER_CS: 
+      TWITTER_AT: 
+      TWITTER_ATS: 
+      
+      # マージ先のリスト情報
+      # リスト ID かスラグ形式のいずれかで指定する
+      # スラグは twitter.com でリストを表示した際の URL の末尾に対応する
+      # リスト ID → スラグの順に優先される
+      TARGET_LIST_ID: 1390629477827301384
+      TARGET_LIST_SLUG: list
+
+      # マージ元の情報
+      # ID で指定したリストのメンバーをマージ
+      SOURCE_LIST_IDS: 916610937540403200
+      # スラグで指定したリストのメンバーをマージ
+      # {スクリーンネーム}/{スラグ} で指定する必要がある
+      SOURCE_LIST_SLUGS:
+      # ID で指定したユーザの following をマージ
+      SOURCE_USER_IDS:
+      # スクリーンネームで指定したユーザの following をマージ
+      SOURCE_USER_SCREEN_NAMES:
+      # ユーザに自身を含めるか (デフォルト: 無効)
+      SOURCE_USER_INCLUDE_SELF: 1
