@@ -41,6 +41,15 @@ encode:
       suffix: .mp4
       rate: 4.0
 
+reserveNewAddtionCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh reserve'
+reserveUpdateCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh update'
+reservedeletedCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh delete'
+recordingPreStartCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh prestart'
+recordingPrepRecFailedCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh prepfailed'
+recordingStartCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh start'
+recordingFinishCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh end'
+recordingFailedCommand: '/bin/sh /app/recorded/EPGS-to-Discord-v2/run.sh recfailed'
+
 urlscheme:
     m2ts:
         ios: vlc-x-callback://x-callback-url/stream?url=PROTOCOL://ADDRESS
