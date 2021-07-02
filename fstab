@@ -1,0 +1,11 @@
+# external storages
+# data1
+UUID="4bf860d1-8f94-4c09-b9cc-5b1f92185e18" /mnt/data1 ext4 defaults 0 0
+# data2
+UUID="97cbc308-be89-43b3-bdfe-a548e4439c5d" /mnt/data2 ext4 defaults 0 0
+# data3 (inactive)
+#UUID="144fda51-2463-4656-bc34-a539a349ff66" /mnt/data3 ext4 defaults 0 0
+# data4 Crucial 250GB
+UUID="afb8904b-2c61-4ecd-b02e-2d34fa362090" /mnt/data4 ext4 defaults 0 0
+# data5 WD Blue 4TB
+UUID="e97c7dce-388f-470b-a7a2-ff4dc84dc458" /mnt/data5 ext4 defaults 0 0
