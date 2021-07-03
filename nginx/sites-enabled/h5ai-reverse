@@ -1,0 +1,8 @@
+server {
+    listen [::]:80;
+    server_name files.yude.jp;
+
+    location / {
+        proxy_pass http://100.117.175.86:8801;
+    }
+}
