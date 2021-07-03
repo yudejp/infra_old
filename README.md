@@ -1,14 +1,35 @@
 # config
 📎 Server configuration
 
-## Docker Compose (`docker-compose/`)
-### mirakurun-epgstation
+## Tested environment
+* Arch Linux [x86_64] for Docker Compose, fstab, cron, systemd, Samba.
+* Raspbian GNU/Linux 10 (buster) [armv7l] for HAProxy.
+
+## Table of contents
+### Docker Compose (`docker-compose/`)
+#### mirakurun-epgstation
 * Use [this](https://github.com/l3tnun/docker-mirakurun-epgstation) instead of files in this repository.
 
-## HAProxy (`haproxy/`)
-## Install
+### HAProxy (`haproxy/`)
+#### Install
 The content does not include all of configurations (e.g. default HAProxy's configuration).\
 Don't replace all of `haproxy.cfg`, just ADD to the file.
+
+### fstab (`fstab`)
+#### Install
+Add content of `fstab` into your system's `/etc/fstab`.
+
+### cron (`crontab`)
+#### Install
+Run `crontab -e` and paste content of `crontab` into opened file.
+
+### systemd (`systemd/`)
+#### Install
+Copy the files in `systemd` into `/etc/systemd/system`.
+
+### Samba (`smb.conf`)
+#### Install
+Replace your system's `/etc/samba/smb.conf` with `smb.conf` (in this repository).
 
 ## License
 This repository is provided under the MIT License.
