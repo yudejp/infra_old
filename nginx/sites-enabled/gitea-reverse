@@ -3,6 +3,6 @@ server {
     server_name git.yude.jp;
 
     location / {
-        proxy_pass http://cherry:3050;
+        proxy_pass http://yui:3020;
     }
 }
