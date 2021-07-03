@@ -1,0 +1,3 @@
+*/20 * * * * cd /home/yude/markov; /usr/bin/python3 /home/yude/markov/run.py
+40 5 * * * rsync -avzu --delete /mnt/data1/encoded/ /mnt/data5/encoded/
+*/15 * * * * /home/yude/switchbot-discord/post.sh
