@@ -1,0 +1,8 @@
+version: '3'
+services:
+  attendance-alarm:
+    restart: always
+    container_name: attendance-alarm
+    image: yude/attendance-alarm:latest
+    volumes:
+      - "./config.yml:/app/resources/config.yml"
