@@ -10,7 +10,6 @@ WorkingDirectory=/home/yude/bot
 Restart=always
 User=yude
 Group=yude
-Environment="DISCORD_TOKEN="
 
 [Install]
 WantedBy=multi-user.target
