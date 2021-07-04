@@ -16,11 +16,11 @@ services:
       - GITEA__database__NAME=gitea
       - GITEA__database__USER=gitea
       - GITEA__database__PASSWD=gitea
+      - GITEA_CUSTOM=/data/gitea/custom
     restart: always
     networks:
       - gitea
     volumes:
-      # Reminder: check path
       - /mnt/data1/gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
