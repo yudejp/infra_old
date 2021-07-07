@@ -14,10 +14,10 @@ services:
     restart: always
 
   app:
-    image: nextcloud:apache
+    image: nextcloud
     restart: always
     ports:
-      - 9000:9000
+      - 9000:80
     volumes:
       - ./data/html:/var/www/html
       - /mnt/data1:/storage/data1
@@ -25,7 +25,6 @@ services:
       - /mnt/data4:/storage/data4
       - /mnt/data5:/storage/data5
     environment:
-      - VIRTUAL_HOST=nc.yude.jp
       - POSTGRES_HOST=db
       - REDIS_HOST=redis
     env_file:
@@ -46,18 +45,6 @@ services:
     depends_on:
       - db
       - redis
-
-  proxy:
-    build: ./proxy
-    restart: always
-    ports:
-      - 8089:80
-    volumes:
-      - ./data/nginx/vhost.d:/etc/nginx/vhost.d
-      - ./data/html:/usr/share/nginx/html
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-    networks:
-      - proxy-tier
 
 networks:
   proxy-tier:
