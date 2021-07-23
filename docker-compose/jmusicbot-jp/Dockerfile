@@ -1,4 +1,4 @@
-FROM openjdk:16-jdk-alpine
+FROM openjdk:buster
 ADD ./app /app
 
 # Set working directory
