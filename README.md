@@ -8,7 +8,7 @@
 ## Table of contents
 ### Docker Compose (`docker-compose/`)
 #### mirakurun-epgstation
-* Use [this](https://github.com/l3tnun/docker-mirakurun-epgstation) instead of files in this repository.
+* Please refer to [this repository](https://github.com/yude/docker-mirakurun-epgstation)
 
 ### HAProxy (`haproxy/`)
 #### Install
