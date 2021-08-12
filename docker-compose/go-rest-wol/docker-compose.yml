@@ -2,8 +2,7 @@ version: '3'
 services:
   wol:
     image: "dabondi/go-rest-wol"
-    ports:
-      - "6969:8080"
+    network_mode: "host"
     restart: always
     volumes:
       - ./computer.csv:/app/computer.csv
