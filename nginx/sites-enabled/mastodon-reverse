@@ -8,6 +8,6 @@ server {
   proxy_set_header X-Forwarded-Host $host;
 
   location / {
-    proxy_pass http://100.117.175.86:85;
+    proxy_pass http://yui:80;
   }
 }
