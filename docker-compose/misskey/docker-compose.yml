@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  web:
+    image: misskey/misskey
+    restart: always
+    links:
+      - db
+      - redis
+    ports:
+      - "3040:3000"
+    networks:
+      - internal_network
+      - external_network
+    volumes:
+      - ./files:/misskey/files
+      - ./.config/default.yml:/misskey/.config/default.yml:ro
+
+  redis:
+    restart: always
+    image: redis:4.0-alpine
+    networks:
+      - internal_network
+    volumes:
+      - ./redis:/data
+
+  db:
+    restart: always
+    image: postgres:12.2-alpine
+    networks:
+      - internal_network
+    env_file:
+      - .config/docker.env
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+networks:
+  internal_network:
+    internal: true
+  external_network:
