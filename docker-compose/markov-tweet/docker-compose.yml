@@ -1,0 +1,16 @@
+version: '3'
+services:
+    markov-tweet:
+        restart: always
+        container_name: markov-tweet
+        image: yude/markov-tweet:latest
+        volumes:
+          - "./data:/app/data"
+        environment:
+          # Twitter API related
+          - CK=9VkoIRSqd68vSrq75i9e8xeBC
+          - CS=T1EZUFOX4N2tIh5BQdaUrdgNo3QatrJcciKtFNtNgOOlhoUgf9
+          - AT=4333506854-gq3OyyaB2C1weSldo14gesIcMDEXnqkGNdYwrIl
+          - AS=OpX6WV2fHTqSZUGB5hpM8EfDW0qYn71ZJmJuTBbjnCf1J
+          # Length of sentence
+          - N=1

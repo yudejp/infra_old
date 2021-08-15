@@ -1,0 +1,15 @@
+version: '3'
+services:
+    markov-note:
+        restart: always
+        container_name: markov-note
+        image: yude/markov-note:latest
+        volumes:
+          - "./data:/app/data"
+        environment:
+          # Misskey instance
+          - INSTANCE=misskey.yude.jp
+          # Misskey API token
+          - TOKEN=FtlcTwkMTYkuhRvHlWJNvJW6jTaWQQJw
+          # Length of sentence
+          - N=1
