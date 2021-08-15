@@ -6,7 +6,8 @@ map $http_upgrade $connection_upgrade {
 proxy_cache_path /tmp/nginx_cache levels=1:2 keys_zone=cache1:16m max_size=1g inactive=720m use_temp_path=off;
 
 server {
-    listen 81;
+    listen 80;
+    listen [::]:80;
 
     server_name misskey.yude.jp;
 
@@ -15,7 +16,7 @@ server {
 
     # Proxy to Node
     location / {
-        proxy_pass http://127.0.0.1:3040;
+        proxy_pass http://yui:3040;
         proxy_set_header Host $host;
         proxy_http_version 1.1;
         proxy_redirect off;
