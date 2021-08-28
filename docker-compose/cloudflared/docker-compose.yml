@@ -66,3 +66,14 @@ services:
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
             - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+
+    cloudflared-galactus:
+        image: cloudflare/cloudflared:2021.8.3
+        user: root
+        command: tunnel
+        environment:
+            - TUNNEL_HOSTNAME=galactus.yude.jp
+            - TUNNEL_URL=http://192.168.0.80:4600
+            - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
+        volumes:
+            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
