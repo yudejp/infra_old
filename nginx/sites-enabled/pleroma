@@ -10,7 +10,7 @@ upstream phoenix {
 server {
     server_name    pleroma.yude.jp;
 
-    listen         [::]:80;
+    listen         86;
 
     gzip_vary on;
     gzip_proxied any;
