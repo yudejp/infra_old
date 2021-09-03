@@ -10,6 +10,6 @@ services:
           # Misskey instance
           - INSTANCE=misskey.yude.jp
           # Misskey API token
-          - TOKEN=FtlcTwkMTYkuhRvHlWJNvJW6jTaWQQJw
+          - TOKEN=
           # Length of sentence
           - N=1
