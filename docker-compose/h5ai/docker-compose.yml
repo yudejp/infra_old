@@ -1,10 +1,9 @@
 services:
-    h5ai:
-      image: awesometic/h5ai
-      restart: always
-      container_name: h5ai
-      volumes:
-        - ./data/h5ai:/h5ai
-        - /mnt/data5/h5ai:/data
-      ports:
-        - 8801:80/tcp
+  h5ai:
+    image: yude/h5ai
+    restart: always
+    container_name: h5ai
+    volumes:
+      - /mnt/data5/h5ai:/h5ai
+    ports:
+      - 8801:80/tcp
