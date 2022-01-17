@@ -7,10 +7,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=misskey.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:81
+            - TUNNEL_URL=http://host.docker.internal:81
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-mastodon:
         image: cloudflare/cloudflared:2021.8.3
@@ -18,10 +20,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=mstdn.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:85
+            - TUNNEL_URL=http://host.docker.internal:85
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-pleroma:
         image: cloudflare/cloudflared:2021.8.3
@@ -29,10 +33,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=pleroma.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:86
+            - TUNNEL_URL=http://host.docker.internal:86
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-roundcube:
         image: cloudflare/cloudflared:2021.8.3
@@ -40,10 +46,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=roundcube.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:9002
+            - TUNNEL_URL=http://host.docker.internal:9002
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-bluemap:
         image: cloudflare/cloudflared:2021.8.3
@@ -51,10 +59,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=bluemap.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:8100
+            - TUNNEL_URL=http://host.docker.internal:8100
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-h5ai:
         image: cloudflare/cloudflared:2021.8.3
@@ -62,10 +72,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=files.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:8801
+            - TUNNEL_URL=http://host.docker.internal:8801
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-galactus:
         image: cloudflare/cloudflared:2021.8.3
@@ -73,10 +85,12 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=galactus.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:4600
+            - TUNNEL_URL=http://host.docker.internal:4600
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
     cloudflared-gitea:
         image: cloudflare/cloudflared:2021.8.3
@@ -84,7 +98,9 @@ services:
         command: tunnel
         environment:
             - TUNNEL_HOSTNAME=git.yude.jp
-            - TUNNEL_URL=http://192.168.0.80:3020
+            - TUNNEL_URL=http://host.docker.internal:3020
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
-            - './.config:/root/.cloudflared' # bind mount with cert.pem in it
+            - '$HOME/.cloudflared:/root/.cloudflared'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
