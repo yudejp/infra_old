@@ -1,7 +1,0 @@
-server {
-  server_name bluemap.yude.jp;
-  listen [::]:80;
-  location / {
-    proxy_pass http://100.117.175.86:8100;
-  }
-}
