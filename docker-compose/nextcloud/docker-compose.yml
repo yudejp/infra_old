@@ -2,22 +2,26 @@ version: '3'
 
 services:
   db:
-    image: postgres:alpine
+    image: postgres:13.5-alpine
     restart: always
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file:
       - db.env
+    networks:
+      - internal
 
   redis:
     image: redis:alpine
     restart: always
+    networks:
+      - internal
 
   app:
     image: nextcloud
-    restart: always
     ports:
       - 9000:80
+    restart: always
     volumes:
       - ./data/html:/var/www/html
       - /mnt/data1:/storage/data1
@@ -33,8 +37,22 @@ services:
       - db
       - redis
     networks:
-      - proxy-tier
+      - internal
       - default
+
+  cloudflared:
+    image: cloudflare/cloudflared:2021.8.3
+    user: root
+    command: tunnel
+    environment:
+      - TUNNEL_HOSTNAME=nc.yude.jp
+      - TUNNEL_URL=http://app:80
+      - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
+    volumes:
+      - '$HOME/.cloudflared:/root/.cloudflared'
+    networks:
+      - internal
+    restart: always
 
   cron:
     image: nextcloud:apache
@@ -45,6 +63,8 @@ services:
     depends_on:
       - db
       - redis
+    networks:
+      - internal
 
 networks:
-  proxy-tier:
+  internal:
