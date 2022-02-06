@@ -24,9 +24,6 @@ services:
       - /mnt/data1/gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "3020:3000"
-      - "222:22"
     depends_on:
       - db
 
@@ -41,3 +38,17 @@ services:
       - gitea
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
+  
+  cloudflared:
+    image: ghcr.io/milgradesec/cloudflared:latest
+    user: root
+    command: tunnel
+    environment:
+        - TUNNEL_HOSTNAME=git.yude.jp
+        - TUNNEL_URL=http://server:3000
+        - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
+    volumes:
+        - '$HOME/.cloudflared:/root/.cloudflared'
+    networks:
+      - gitea
+    restart: always

@@ -29,33 +29,6 @@ services:
             - "host.docker.internal:host-gateway"
         restart: always
 
-    cloudflared-h5ai:
-        image: cloudflare/cloudflared:2021.8.3
-        user: root
-        command: tunnel
-        environment:
-            - TUNNEL_HOSTNAME=files.yude.jp
-            - TUNNEL_URL=http://host.docker.internal:8801
-            - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
-        volumes:
-            - '$HOME/.cloudflared:/root/.cloudflared'
-        extra_hosts:
-            - "host.docker.internal:host-gateway"
-        restart: always
-
-    cloudflared-galactus:
-        image: cloudflare/cloudflared:2021.8.3
-        user: root
-        command: tunnel
-        environment:
-            - TUNNEL_HOSTNAME=galactus.yude.jp
-            - TUNNEL_URL=http://host.docker.internal:4600
-            - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
-        volumes:
-            - '$HOME/.cloudflared:/root/.cloudflared'
-        extra_hosts:
-            - "host.docker.internal:host-gateway"
-        restart: always
     
     cloudflared-nextcloud:
         image: cloudflare/cloudflared:2021.8.3
@@ -78,20 +51,6 @@ services:
         environment:
             - TUNNEL_HOSTNAME=wiki.yude.jp
             - TUNNEL_URL=http://host.docker.internal:9202
-            - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
-        volumes:
-            - '$HOME/.cloudflared:/root/.cloudflared'
-        extra_hosts:
-            - "host.docker.internal:host-gateway"
-        restart: always
-
-    cloudflared-gitea:
-        image: cloudflare/cloudflared:2021.8.3
-        user: root
-        command: tunnel
-        environment:
-            - TUNNEL_HOSTNAME=git.yude.jp
-            - TUNNEL_URL=http://host.docker.internal:3020
             - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
         volumes:
             - '$HOME/.cloudflared:/root/.cloudflared'
