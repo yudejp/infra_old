@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  roundcubemail:
+    build: https://github.com/roundcube/roundcubemail-docker.git
+    container_name: roundcubemail
+    restart: unless-stopped
+    volumes:
+      - ./www:/var/www/html
+      - ./db/sqlite:/var/roundcube/db
+    environment:
+      - ROUNDCUBEMAIL_DB_TYPE=sqlite
+      - ROUNDCUBEMAIL_SKIN=elastic
+      - ROUNDCUBEMAIL_DEFAULT_HOST=tls://yudejp.sakura.ne.jp
+      - ROUNDCUBEMAIL_SMTP_SERVER=tls://yudejp.sakura.ne.jp
+
+  cloudflared:
+    image: ghcr.io/milgradesec/cloudflared:latest
+    user: root
+    command: tunnel
+    environment:
+        - TUNNEL_HOSTNAME=roundcube.yude.jp
+        - TUNNEL_URL=http://roundcubemail
+        - TUNNEL_ORIGIN_CERT=/root/.cloudflared/cert.pem
+    volumes:
+        - '$HOME/.cloudflared:/root/.cloudflared'
+    restart: always
