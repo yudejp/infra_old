@@ -2,7 +2,9 @@ version: '2'
 
 services:
   roundcubemail:
-    build: https://github.com/roundcube/roundcubemail-docker.git
+    build:
+      context: https://github.com/roundcube/roundcubemail-docker.git#master
+      dockerfile: fpm-alpine/Dockerfile
     container_name: roundcubemail
     restart: unless-stopped
     volumes:
