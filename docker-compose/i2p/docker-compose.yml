@@ -1,8 +1,0 @@
-version: "3.5"
-services:
-    i2p:
-        image: geti2p/i2p
-        network_mode: host
-        volumes:
-            - ./i2pconfig:/i2p/.i2p
-            - ./i2ptorrents:/i2psnark
