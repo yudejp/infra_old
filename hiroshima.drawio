@@ -4,6 +4,15 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="114" value="" style="endArrow=none;html=1;entryX=0.257;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1278.25" y="615.02" as="sourcePoint"/>
+                        <mxPoint x="1310.1799999999998" y="100.00000000000001" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1310" y="615.02"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="23" value="" style="endArrow=none;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1200" y="390" as="sourcePoint"/>
@@ -33,7 +42,7 @@
                 </mxCell>
                 <mxCell id="10" value="" style="endArrow=none;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1390" y="320" as="sourcePoint"/>
+                        <mxPoint x="1430" y="320" as="sourcePoint"/>
                         <mxPoint x="959.5700000000002" y="320" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
@@ -49,7 +58,7 @@
                 <mxCell id="15" value="Tailscale" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="881.75" y="560" width="168.25" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="" style="endArrow=none;html=1;entryX=0.514;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="5">
+                <mxCell id="18" value="" style="endArrow=none;html=1;entryX=0.257;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="5">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1048.25" y="615" as="sourcePoint"/>
                         <mxPoint x="1080" y="130" as="targetPoint"/>
@@ -59,7 +68,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="5" value="インターネット" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="890" y="50" width="370" height="60" as="geometry"/>
+                    <mxGeometry x="890" y="50" width="740" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="1100" y="380" width="190" height="320" as="geometry"/>
@@ -84,12 +93,12 @@
                 </mxCell>
                 <mxCell id="112" value="" style="endArrow=none;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1389.69" y="320" as="sourcePoint"/>
-                        <mxPoint x="1389.6900000000003" y="250" as="targetPoint"/>
+                        <mxPoint x="1430" y="320" as="sourcePoint"/>
+                        <mxPoint x="1430.0000000000002" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="113" value="Wi-Fi AP&lt;br&gt;TP-LInk&lt;br&gt;AX1500 Wi-Fi 6 Router" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="1300" y="200" width="178.25" height="60" as="geometry"/>
+                    <mxGeometry x="1330" y="200" width="178.25" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
