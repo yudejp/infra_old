@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-01-16T08:21:27.204Z" agent="5.0 (Macintosh)" etag="Qq9zFKTMgJuu3oKxA4Ni" version="20.8.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-16T08:22:08.804Z" agent="5.0 (Macintosh)" etag="sRpZYiUoMrkaQtOLygoV" version="20.8.5" type="github">
   <diagram id="3ydVfQwfDtNWqfTr-PpH" name="ページ1">
-    <mxGraphModel dx="1703" dy="2014" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="867" dy="1151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -216,7 +216,7 @@
           <mxGeometry x="24.25" y="10" width="74" height="64" as="geometry" />
         </mxCell>
         <mxCell id="-T_SCyM8z2vyuJywuo6D-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="10" y="830" width="1120" height="500" as="geometry" />
+          <mxGeometry x="10" y="830" width="1190" height="500" as="geometry" />
         </mxCell>
         <mxCell id="-T_SCyM8z2vyuJywuo6D-2" value="tottori.yude.jp" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
           <mxGeometry x="47.5" y="830" width="100" height="40" as="geometry" />
